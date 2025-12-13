@@ -1,9 +1,9 @@
-from algotithm_realization import hasHamiltonianPath
+from algorithm import hasHamiltonianPath
 from time_estimation import estimate_algorithm_time
 if __name__ == "__main__":
 
-    V_TEST = 5
-    P_TEST = 0.3
+    V_TEST = 20
+    P_TEST = 0.5
 
     generated_graph, path_exists, exec_time = estimate_algorithm_time(
         num_vertices=V_TEST,
