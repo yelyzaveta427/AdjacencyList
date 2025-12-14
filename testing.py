@@ -26,13 +26,15 @@ def estimate_time(number_of_vertices : int, density : float):
     print(f"Matrix time {matrix_graph_time_1 - matrix_graph_time_0}\n")
     return list_graph_time_1 - list_graph_time_0,matrix_graph_time_1 - matrix_graph_time_0
 
-numbers = [20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
-densitys = [0.05,0.1,0.15,0.2,0.25]
-def get_statistic(density):
-    for number in numbers:
-        for experiment_index in range(20):
-            list_time,matrix_time = estimate_time(number,density)
-            with open(f"statistic_{number}_{density}.csv", "a") as file:
-                file.write(f"{number},{density},{list_time},{matrix_time},\n")
+numbers = [10,11,12,13,14,15,16,17,18,19,20]
+densitys = [0.1,0.15,0.2,0.25]
+def get_statistic(densitys):
+    for density in densitys:
+        for number in numbers:
+            for experiment_index in range(20):
+                list_time,matrix_time = estimate_time(number,density)
+                print(experiment_index,f"{number},{density}")
+                with open(f"statistic_{number}_{density}.csv", "a") as file:
+                    file.write(f"{number},{density},{list_time},{matrix_time},\n")
 if __name__ == '__main__':
-    estimate_time(20,0.05)
+    get_statistic(densitys)
