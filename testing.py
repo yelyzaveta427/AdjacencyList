@@ -34,3 +34,5 @@ def get_statistic(density):
             list_time,matrix_time = estimate_time(number,density)
             with open(f"statistic_{number}_{density}.csv", "a") as file:
                 file.write(f"{number},{density},{list_time},{matrix_time},\n")
+if __name__ == '__main__':
+    estimate_time(20,0.05)
