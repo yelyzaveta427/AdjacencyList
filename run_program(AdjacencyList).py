@@ -1,9 +1,9 @@
-from algotithm_realization import hasHamiltonianCycle
+from algorithm import hasHamiltonianCycle
 from time_estimation import estimate_algorithm_time
 if __name__ == "__main__":
 
-    V_TEST = 20
-    P_TEST = 0.5
+    V_TEST = 5
+    P_TEST = 0.3
 
     generated_graph, path_exists, exec_time = estimate_algorithm_time(
         num_vertices=V_TEST,
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     else:
         print("Gamiltonian path is not found")
 
-    print(f"⏱ Time of algorithm`s work: {exec_time:.6f} sec")
+    print(f"Time of algorithm`s work: {exec_time:.6f} sec")
